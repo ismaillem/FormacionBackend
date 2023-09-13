@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5acbd555-b166-4df9-9afa-891a3c3ceb51" name="Changes" comment="commit2">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/block3-create-repo-git/fichero2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/block3-create-repo-git/fichero2.txt" afterDir="false" />
-    </list>
+    <list default="true" id="5acbd555-b166-4df9-9afa-891a3c3ceb51" name="Changes" comment="commit3" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -103,13 +99,22 @@
       <option name="project" value="LOCAL" />
       <updated>1694598331578</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="commit3">
+      <option name="closed" value="true" />
+      <created>1694599362936</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1694599362936</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="bloque 1 y 3.1" />
     <MESSAGE value="commit2" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit2" />
+    <MESSAGE value="commit3" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit3" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
