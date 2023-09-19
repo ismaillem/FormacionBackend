@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="MavenProjectsManager">
@@ -6,11 +7,13 @@
         <option value="$PROJECT_DIR$/block1/pom.xml" />
         <option value="$PROJECT_DIR$/bloock3.1/pom.xml" />
         <option value="$PROJECT_DIR$/block3-create-repo-git/pom.xml" />
+        <option value="$PROJECT_DIR$/block5-command-line-runner/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
       <set>
         <option value="$PROJECT_DIR$/block1/pom.xml" />
+        <option value="$PROJECT_DIR$/block5-command-line-runner/pom.xml" />
         <option value="$PROJECT_DIR$/bloock3.1/pom.xml" />
       </set>
     </option>

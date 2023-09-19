@@ -1,0 +1,9 @@
+10:35:13.509 [http-nio-8080-exec-2] ERROR c.example.block5logging.Controlador - Mensaje a nivel de ERROR
+10:37:14.190 [http-nio-8080-exec-1] ERROR c.example.block5logging.Controlador - Mensaje a nivel de ERROR
+10:37:25.143 [http-nio-8080-exec-2] ERROR c.example.block5logging.Controlador - Mensaje a nivel de ERROR
+10:41:32.487 [http-nio-8080-exec-1] ERROR c.example.block5logging.Controlador - Mensaje a nivel de ERROR
+10:41:34.851 [http-nio-8080-exec-2] ERROR c.example.block5logging.Controlador - Mensaje a nivel de ERROR
+10:43:30.221 [http-nio-8080-exec-1] ERROR c.example.block5logging.Controlador - Mensaje a nivel de ERROR
+10:43:35.285 [http-nio-8080-exec-2] ERROR c.example.block5logging.Controlador - Mensaje a nivel de ERROR
+10:45:59.289 [http-nio-8080-exec-1] ERROR c.example.block5logging.Controlador - Mensaje a nivel de ERROR
+10:46:50.036 [http-nio-8080-exec-1] ERROR c.example.block5logging.Controlador - Mensaje a nivel de ERROR
