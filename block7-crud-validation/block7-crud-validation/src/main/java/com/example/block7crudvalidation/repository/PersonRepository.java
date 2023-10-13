@@ -1,4 +1,4 @@
-package com.example.block7crudvalidation.Repository;
+package com.example.block7crudvalidation.repository;
 
 import com.example.block7crudvalidation.domain.Person;
 import org.springframework.data.jpa.repository.JpaRepository;

@@ -7,13 +7,12 @@ import org.springframework.stereotype.Service;
 
 
 public interface PersonService {
-    PersonOutputDto getPersonById(int id);
-    Iterable<PersonOutputDto> getPersonByUsuer(String usuario);
-    Iterable<PersonOutputDto> getAllPersons(int pageNumber, int pageSize);
+    PersonOutputDto getPersonById(int id, String outputType);
+    Iterable<PersonOutputDto> getPersonByUsuer(String usuario, String outputType);
+    Iterable<PersonOutputDto> getAllPersons(int pageNumber, int pageSize, String outputType);
     PersonOutputDto addPerson(PersonInputDto person);
-
     PersonOutputDto patchPerson(PersonInputDto person, int id) throws UnprocessableEntityException;
-
     PersonOutputDto updatePerson(PersonInputDto person, int id);
+    void deletePersonById(int id);
 
 }

@@ -22,4 +22,19 @@ public class PersonOutputDto {
     Date created_date;
     String imagen_url;
     Date termination_date;
+
+    public PersonOutputDto(PersonOutputDto personOutputDto){
+        this.id = personOutputDto.getId();
+        this.usuario = personOutputDto.getUsuario();
+        this.password = personOutputDto.getPassword();
+        this.name = personOutputDto.getName();
+        this.surname = personOutputDto.getSurname();
+        this.company_email = personOutputDto.getCompany_email();
+        this.personal_email = personOutputDto.getPersonal_email();
+        this.city = personOutputDto.getCity();
+        this.active = personOutputDto.isActive();
+        this.created_date = personOutputDto.getCreated_date();
+        this.imagen_url = personOutputDto.getImagen_url();
+        this.termination_date = personOutputDto.getTermination_date();
+    }
 }
