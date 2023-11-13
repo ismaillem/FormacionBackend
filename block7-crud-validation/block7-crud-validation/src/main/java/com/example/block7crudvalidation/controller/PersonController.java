@@ -10,11 +10,13 @@ import com.example.block7crudvalidation.controller.dto.PersonOutputDto;
 import feign.FeignException;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
+import java.util.HashMap;
 
 @RestController
 public class PersonController {
@@ -79,7 +81,7 @@ public class PersonController {
         }
     }
 
-    @GetMapping("/profesor/{id}")
+    @GetMapping("/profesorfeign/{id}")
     public ResponseEntity<ProfesorOutputDto> getProfesor(@PathVariable int id){
         try{
             return ResponseEntity.ok().body(profesorFeignClient.getProfesor(id));
@@ -89,6 +91,30 @@ public class PersonController {
         }
     }
 
+    @GetMapping("customquery")
+    public Iterable<PersonOutputDto> findByParam(
+            @RequestParam(required = false) String usuario,
+            @RequestParam(required = false) String name,
+            @RequestParam(required = false) String surname,
+            @RequestParam(required = false) @DateTimeFormat(pattern = "dd-MM-yyyy") String createdAt,
+            @RequestParam(required = false) String orderBy,
+            @RequestParam(defaultValue = "asc", required = false) String orderByDirection,
+            @RequestParam Integer pageNumber,
+            @RequestParam(defaultValue = "3", required = false) Integer pageSize){
+
+        HashMap<String, Object> data = new HashMap<>();
+
+        if(usuario != null) data.put("usuario", usuario);
+        if(name != null) data.put("name", name);
+        if(surname != null) data.put("surname", surname);
+        if(createdAt != null) data.put("createdAt", createdAt);
+        if(orderBy != null) data.put("orderBy", orderBy);
+        if(orderByDirection != null) data.put("orderByDirection", orderByDirection);
+        if(pageNumber != null) data.put("pageNumber",pageNumber);
+        if(pageSize != null) data.put("pageSize",pageSize);
+
+        return personService.getCustomQuery(data);
+    }
 
     @ResponseStatus(HttpStatus.UNPROCESSABLE_ENTITY)
     @ExceptionHandler(UnprocessableEntityException.class)

@@ -62,7 +62,6 @@ public class AsignaturaServiceImpl implements AsignaturaService{
             throw new UnprocessableEntityException("No se ha encontrado ninguna persona.");
         }
         Asignatura asig = asignaturaRepository.findById(id).orElseThrow();
-        AsignaturaMapper.INSTANCE.updateAsignaturaFromDto(asignaturaInputDto, asig);
         return asignaturaRepository.save(asig).AsignaturaToAsignaturaOutputDto();
     }
 

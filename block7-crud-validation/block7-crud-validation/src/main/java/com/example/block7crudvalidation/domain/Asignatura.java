@@ -44,8 +44,8 @@ public class Asignatura {
 
     public AsignaturaOutputDto AsignaturaToAsignaturaOutputDto(){
         List<Integer> list = this.students.stream()
-            .map(Student::getId_student)
-            .collect(Collectors.toList());
+                .map(Student::getId_student)
+                .collect(Collectors.toList());
         return new AsignaturaOutputDto(this.id_asignatura, list, this.asignatura, this.coments,
                 this.initial_date, this.finish_date);
     }

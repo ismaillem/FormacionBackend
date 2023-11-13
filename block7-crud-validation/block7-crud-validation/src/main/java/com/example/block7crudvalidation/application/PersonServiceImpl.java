@@ -8,11 +8,18 @@ import com.example.block7crudvalidation.domain.Person;
 import com.example.block7crudvalidation.mappers.PersonMapper;
 import com.example.block7crudvalidation.repository.ProfesorRepository;
 import com.example.block7crudvalidation.repository.StudentRepository;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import jakarta.persistence.criteria.CriteriaBuilder;
+import jakarta.persistence.criteria.CriteriaQuery;
+import jakarta.persistence.criteria.Predicate;
+import jakarta.persistence.criteria.Root;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 @Service
@@ -129,5 +136,49 @@ public class PersonServiceImpl implements PersonService{
         return personRepository.save(p).personToPersonOutputDto();
     }
 
+    @PersistenceContext
+    private EntityManager entityManager;
+
+    public List<PersonOutputDto> getCustomQuery(HashMap<String, Object> conditions){
+        CriteriaBuilder cb = entityManager.getCriteriaBuilder();
+        CriteriaQuery<Person> query = cb.createQuery(Person.class);
+        Root<Person> root = query.from(Person.class);
+        PageRequest pageRequest=PageRequest.of((Integer)conditions.get("pageNumber"),(Integer)conditions.get("pageSize"));
+        List<Predicate> predicates = new ArrayList<>();
+
+        conditions.forEach((field,value) -> {
+            switch (field){
+                case "user":
+                    predicates.add(cb.greaterThan(root.get(field),"%" + (String) value + "%"));
+                    break;
+                case "name":
+                    predicates.add(cb.greaterThan(root.get(field),"%" + (String) value + "%"));
+                    break;
+                case "surname":
+                    predicates.add(cb.greaterThan(root.get(field),"%" + (String) value + "%"));
+                    break;
+                case "createdAt":
+                    predicates.add(cb.greaterThan(root.get(field),"%" + (String) value + "%"));
+                    break;
+            }
+        });
+
+        if(conditions.get("orderBy").equals("usuario")){
+            query.select(root).where(predicates.toArray(new Predicate[predicates.size()])).
+                    orderBy(conditions.get("orderByDirection").equals("desc") ? cb.desc(root.get("usuario")) : cb.asc(root.get("usuario")));
+        }else{
+            query.select(root).where(predicates.toArray(new Predicate[predicates.size()])).
+                    orderBy(conditions.get("orderByDirection").equals("desc") ? cb.desc(root.get("name")) : cb.asc(root.get("name")));
+        }
+
+
+        return entityManager
+                .createQuery(query).setFirstResult(pageRequest.getPageNumber() * pageRequest.getPageSize()+1).setMaxResults(pageRequest.getPageSize())
+                .getResultList()
+                .stream()
+                .map(Person::personToPersonOutputDto)
+                .toList();
+
+    }
 
 }

@@ -3,8 +3,6 @@ package com.example.block7crudvalidation.application;
 import com.example.block7crudvalidation.controller.dto.PersonInputDto;
 import com.example.block7crudvalidation.controller.dto.PersonOutputDto;
 import com.example.block7crudvalidation.exceptions.UnprocessableEntityException;
-import org.springframework.stereotype.Service;
-
 
 public interface PersonService {
     PersonOutputDto getPersonById(int id, String outputType);
@@ -14,5 +12,4 @@ public interface PersonService {
     PersonOutputDto patchPerson(PersonInputDto person, int id) throws UnprocessableEntityException;
     PersonOutputDto updatePerson(PersonInputDto person, int id);
     void deletePersonById(int id);
-
 }

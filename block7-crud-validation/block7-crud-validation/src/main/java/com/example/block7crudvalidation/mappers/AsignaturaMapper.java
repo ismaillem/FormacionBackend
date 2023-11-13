@@ -13,6 +13,6 @@ import org.mapstruct.factory.Mappers;
 @Mapper(componentModel= "spring")
 public interface AsignaturaMapper {
     AsignaturaMapper INSTANCE= Mappers.getMapper(AsignaturaMapper.class);
-    @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
-    void updateAsignaturaFromDto(AsignaturaInputDto dto, @MappingTarget Asignatura entity);
+    //@BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
+    //void updateAsignaturaFromDto(AsignaturaInputDto dto, @MappingTarget Asignatura entity);
 }

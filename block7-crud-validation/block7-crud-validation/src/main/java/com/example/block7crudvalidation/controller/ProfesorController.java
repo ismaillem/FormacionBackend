@@ -63,6 +63,4 @@ public class ProfesorController {
     public ResponseEntity<CustomError> handleEntityNotFoundException(EntityNotFoundException enfe) {
         return ResponseEntity.status(HttpStatus.UNPROCESSABLE_ENTITY).body(enfe.getCe());
     }
-
-
 }

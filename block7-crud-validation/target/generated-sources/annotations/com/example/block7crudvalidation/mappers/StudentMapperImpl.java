@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-10-09T09:29:02+0200",
+    date = "2023-11-09T12:51:20+0100",
     comments = "version: 1.5.3.Final, compiler: javac, environment: Java 17.0.8 (Oracle Corporation)"
 )
 @Component
@@ -20,9 +20,6 @@ public class StudentMapperImpl implements StudentMapper {
         }
 
         entity.setId_student( dto.getId_student() );
-        if ( dto.getPerson() != null ) {
-            entity.setPerson( dto.getPerson() );
-        }
         entity.setNum_hours_week( dto.getNum_hours_week() );
         if ( dto.getComents() != null ) {
             entity.setComents( dto.getComents() );
