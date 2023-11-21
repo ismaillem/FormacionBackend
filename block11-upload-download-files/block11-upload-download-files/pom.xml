@@ -31,11 +31,14 @@
 		<artifactId>spring-boot-starter-web</artifactId>
 	</dependency>
 	<dependency>
+<<<<<<< HEAD
 		<groupId>org.springdoc</groupId>
 		<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
 		<version>2.2.0</version>
 	</dependency>
 	<dependency>
+=======
+>>>>>>> d19655d3aa745be19d9d0faa08b60ad5a1658f95
 		<groupId>org.springframework.cloud</groupId>
 		<artifactId>spring-cloud-starter-config</artifactId>
 	</dependency>
@@ -45,10 +48,13 @@
 		<scope>runtime</scope>
 	</dependency>
 	<dependency>
+<<<<<<< HEAD
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-data-rest</artifactId>
 	</dependency>
 	<dependency>
+=======
+>>>>>>> d19655d3aa745be19d9d0faa08b60ad5a1658f95
 		<groupId>org.projectlombok</groupId>
 		<artifactId>lombok</artifactId>
 		<optional>true</optional>

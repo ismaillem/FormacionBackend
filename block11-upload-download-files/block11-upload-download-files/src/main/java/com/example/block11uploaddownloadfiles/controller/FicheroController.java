@@ -2,11 +2,14 @@ package com.example.block11uploaddownloadfiles.controller;
 
 import com.example.block11uploaddownloadfiles.application.FicheroServicio;
 import com.example.block11uploaddownloadfiles.domain.Fichero;
+<<<<<<< HEAD
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
+=======
+>>>>>>> d19655d3aa745be19d9d0faa08b60ad5a1658f95
 import jakarta.annotation.Resource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -32,6 +35,7 @@ public class FicheroController {
         ficheroServicio.cambiarRuta(path);
     }
 
+<<<<<<< HEAD
     @Operation(
             summary = "Download a file",
             responses = {
@@ -42,6 +46,8 @@ public class FicheroController {
                     @ApiResponse(responseCode = "500", description = "Error downloading file")
             }
     )
+=======
+>>>>>>> d19655d3aa745be19d9d0faa08b60ad5a1658f95
     @GetMapping("/id/{id}")
     public Fichero descargarPorID(@PathVariable int id) {
         return ficheroServicio.descargarFicheroId(id);
